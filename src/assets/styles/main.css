@@ -3,3 +3,19 @@
 	margin: 0;
 	padding: 0;
 }
+
+body {
+	font-family: 'Inter', sans-serif;
+}
+
+.container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	height: 100vh;
+	background-color: #f5f7fb;
+	position: relative;
+	background: url('./src/assets/images/blue-blob.png') no-repeat bottom left,
+		url('./src/assets/images/yellow-blob.png') no-repeat top right;
+}
