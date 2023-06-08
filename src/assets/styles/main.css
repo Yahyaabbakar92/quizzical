@@ -6,6 +6,7 @@
 
 body {
 	font-family: 'Inter', sans-serif;
+	color: #293264;
 }
 
 .container {
@@ -18,4 +19,31 @@ body {
 	position: relative;
 	background: url('./src/assets/images/blue-blob.png') no-repeat bottom left,
 		url('./src/assets/images/yellow-blob.png') no-repeat top right;
+}
+
+h1 {
+	font-family: 'Karla', sans-serif;
+	font-weight: 700;
+	font-size: 2rem;
+	text-align: center;
+}
+
+.quiz-description {
+	font-weight: 400;
+	font-size: 1rem;
+	text-align: center;
+	margin-top: 8px;
+}
+
+.quiz-button {
+	color: #f5f7fb;
+	font-family: 'Inter', sans-serif;
+	font-weight: 500;
+	font-size: 1rem;
+	text-align: center;
+	padding: 15px 30px;
+	background-color: #4d5b9e;
+	border: 0;
+	border-radius: 15px;
+	margin-top: 30px;
 }
