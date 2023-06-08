@@ -16,6 +16,6 @@ body {
 	height: 100vh;
 	background-color: #f5f7fb;
 	position: relative;
-	background: url('../src/assets/images/blue-blob.png') no-repeat bottom left,
-		url('../src/assets/images/yellow-blob.png') no-repeat top right;
+	background: url('./public/blue-blob.png') no-repeat bottom left,
+		url('./src/assets/images/yellow-blob.png') no-repeat top right;
 }
