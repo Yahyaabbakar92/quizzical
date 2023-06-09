@@ -7,6 +7,7 @@
 body {
 	font-family: 'Inter', sans-serif;
 	color: #293264;
+	background-color: #f5f7fb;
 }
 
 .container {
@@ -15,7 +16,6 @@ body {
 	align-items: center;
 	flex-direction: column;
 	height: 100vh;
-	background-color: #f5f7fb;
 	position: relative;
 	background: url('./src/assets/images/blue-blob.png') no-repeat bottom left,
 		url('./src/assets/images/yellow-blob.png') no-repeat top right;
@@ -47,4 +47,15 @@ h1 {
 	border-radius: 15px;
 	margin-top: 30px;
 	cursor: pointer;
+}
+
+.quiz {
+	max-width: 400px;
+	margin: auto;
+}
+
+.quiz-question {
+	font-size: 1rem;
+	font-weight: 700;
+	font-family: 'Karla', sans-serif;
 }
