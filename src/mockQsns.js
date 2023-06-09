@@ -1,0 +1,45 @@
+export default {
+	response_code: 0,
+	results: [
+		{
+			category: 'General Knowledge',
+			type: 'multiple',
+			difficulty: 'easy',
+			question: 'In past times, what would a gentleman keep in his fob pocket?',
+			correct_answer: 'Watch',
+			incorrect_answers: ['Money', 'Keys', 'Notebook'],
+		},
+		{
+			category: 'General Knowledge',
+			type: 'multiple',
+			difficulty: 'easy',
+			question: 'What is the name of the Jewish New Year?',
+			correct_answer: 'Rosh Hashanah',
+			incorrect_answers: ['Elul', 'New Year', 'Succoss'],
+		},
+		{
+			category: 'General Knowledge',
+			type: 'multiple',
+			difficulty: 'easy',
+			question: 'What is the Zodiac symbol for Gemini?',
+			correct_answer: 'Twins',
+			incorrect_answers: ['Fish', 'Scales', 'Maiden'],
+		},
+		{
+			category: 'General Knowledge',
+			type: 'multiple',
+			difficulty: 'easy',
+			question: 'What is the closest planet to our solar system&#039;s sun?',
+			correct_answer: 'Mercury',
+			incorrect_answers: ['Mars', 'Jupiter', 'Earth'],
+		},
+		{
+			category: 'General Knowledge',
+			type: 'multiple',
+			difficulty: 'easy',
+			question: 'What are Panama hats made out of?',
+			correct_answer: 'Straw',
+			incorrect_answers: ['Silk', 'Hemp', 'Flax'],
+		},
+	],
+};
