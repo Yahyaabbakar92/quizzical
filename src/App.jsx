@@ -3,7 +3,7 @@ import QuizQsnAns from './components/QuizQsnAns';
 import { useState } from 'react';
 
 export default function App() {
-  const [hasStarted, setHasStarted] = useState(false)
+  const [hasStarted, setHasStarted] = useState(true)
 
   function handleStart() {
     setHasStarted(prevStart => !prevStart)
