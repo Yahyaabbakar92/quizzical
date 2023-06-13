@@ -17,8 +17,6 @@ body {
 	flex-direction: column;
 	height: 100vh;
 	position: relative;
-	background: url('./src/assets/images/blue-blob.png') no-repeat bottom left,
-		url('./src/assets/images/yellow-blob.png') no-repeat top right;
 }
 
 h1 {
@@ -27,15 +25,18 @@ h1 {
 	font-size: 2rem;
 	text-align: center;
 }
+.intro {
+	text-align: center;
+}
 
-.quiz-description {
+.intro-description {
 	font-weight: 400;
 	font-size: 1rem;
 	text-align: center;
 	margin-top: 8px;
 }
 
-.quiz-button {
+button {
 	color: #f5f7fb;
 	font-family: 'Inter', sans-serif;
 	font-weight: 500;
