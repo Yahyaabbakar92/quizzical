@@ -55,7 +55,7 @@ import { useState, useEffect } from 'react';
 import { decode } from 'html-entities';
 import { nanoid } from 'nanoid';
 
-export default function Quiz() {
+export default function Quiz({ onFinishQuiz }) {
   const [questions, setQuestions] = useState([]);
 
   useEffect(() => {
@@ -75,7 +75,7 @@ export default function Quiz() {
       <ul>
         {question.answers.map((choice) => (
           <li key={choice}>
-            <label htmlFor={choice}>
+            <label htmlFor={choice} className='radio-label'>
               <input
                 type="radio"
                 name={question.id}
@@ -83,7 +83,7 @@ export default function Quiz() {
                 value={choice}
                 onChange={(e) => handleSelectAnswer(question.id, e.target.value)}
               />
-              {decode(choice)}
+              <span>{decode(choice)}</span>
             </label>
           </li>
         ))}
@@ -108,5 +108,10 @@ export default function Quiz() {
     );
   }
 
-  return <div className="quiz">{questionEl}</div>;
+  return (
+    <div className='quiz'>
+        {questionEl}
+        <button onClick={ onFinishQuiz }>Check Answers</button>
+    </div>
+  )
 }
