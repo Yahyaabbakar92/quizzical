@@ -1,5 +1,4 @@
 /* eslint-disable react/prop-types */
-// import quizData from '../quizData';
 import { useState, useEffect } from 'react';
 import { decode } from 'html-entities';
 import { nanoid } from 'nanoid';
@@ -8,15 +7,6 @@ export default function Quiz({ onFinishQuiz, setQuestions }) {
   const [questions, setShuffledQuestions] = useState([]);
 
   useEffect(() => {
-    // const questionInfo = quizData.results.map((question) => ({
-    //   ...question,
-    //   id: nanoid(),
-    //   answers: shuffleArray([...question.incorrect_answers, question.correct_answer]),
-    //   selected: null,
-    //   checked: false,
-    // }));
-    // setShuffledQuestions(questionInfo);
-    // setQuestions(questionInfo);
     fetch('https://opentdb.com/api.php?amount=5')
       .then(response => response.json())
       .then(data => {
