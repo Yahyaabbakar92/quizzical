@@ -1,72 +1,38 @@
-// import quizData from '../quizData'
-// import { useState, useEffect } from 'react'
-// import { decode } from 'html-entities'
-// import { nanoid } from 'nanoid'
-
-// export default function Quiz() {
-//     const [questions, setQuestions] = useState(quizData.results)
-
-//     const questionInfo = questions.map(question => {
-//         return {
-//             ...question,
-//             id: nanoid(),
-//             answers: shuffleArray([...question.incorrect_answers, question.correct_answer]),
-//             selected: null,
-//             checked: false
-//         }
-//     })
-//     const questionEl = questionInfo.map(question => (
-//         <div key={ question.id }>
-//             <h3>{ question.question }</h3>
-//             <ul>
-//                 { question.answers.map(choice => (
-//                     <li key={question.id}>
-//                         <label htmlFor={question.id}>
-//                             <input 
-//                                 type="radio" 
-//                                 name={question.answers.id} 
-//                                 id={question.id} 
-//                             />
-//                             {choice}
-//                         </label>
-//                     </li>
-//                 )) }
-//             </ul>
-//         </div>
-//     ))
-    
-//     function shuffleArray(array) {
-//         const shuffledArray = [...array]
-//         for (let i = shuffledArray.length - 1; i > 0; i--) {
-//             const j = Math.floor(Math.random() * (i + 1));
-//             [shuffledArray[i], shuffledArray[j]] = [shuffledArray[j], shuffledArray[i]]
-//         }
-//         return shuffledArray
-//     }
-//     return (
-//         <div className='quiz'>
-//             {questionEl}
-//         </div>
-//     )
-// }
-
-import quizData from '../quizData';
+/* eslint-disable react/prop-types */
+// import quizData from '../quizData';
 import { useState, useEffect } from 'react';
 import { decode } from 'html-entities';
 import { nanoid } from 'nanoid';
 
-export default function Quiz({ onFinishQuiz }) {
-  const [questions, setQuestions] = useState([]);
+export default function Quiz({ onFinishQuiz, setQuestions }) {
+  const [questions, setShuffledQuestions] = useState([]);
 
   useEffect(() => {
-    const questionInfo = quizData.results.map((question) => ({
-      ...question,
-      id: nanoid(),
-      answers: shuffleArray([...question.incorrect_answers, question.correct_answer]),
-      selected: null,
-      checked: false,
-    }));
-    setQuestions(questionInfo);
+    // const questionInfo = quizData.results.map((question) => ({
+    //   ...question,
+    //   id: nanoid(),
+    //   answers: shuffleArray([...question.incorrect_answers, question.correct_answer]),
+    //   selected: null,
+    //   checked: false,
+    // }));
+    // setShuffledQuestions(questionInfo);
+    // setQuestions(questionInfo);
+    fetch('https://opentdb.com/api.php?amount=5')
+      .then(response => response.json())
+      .then(data => {
+        const questionInfo = data.results.map((question) => ({
+          ...question,
+          id: nanoid(),
+          answers: shuffleArray([...question.incorrect_answers, question.correct_answer]),
+          selected: null,
+          checked: false,
+        }))
+        setShuffledQuestions(questionInfo)
+        setQuestions(questionInfo)
+      })
+      .catch(error => {
+        console.error('Error fetching questions:', error)
+      })
   }, []);
 
   const questionEl = questions.map((question) => (
