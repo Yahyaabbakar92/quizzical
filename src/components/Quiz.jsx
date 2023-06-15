@@ -7,7 +7,7 @@ export default function Quiz({ onFinishQuiz, setQuestions }) {
   const [questions, setShuffledQuestions] = useState([]);
 
   useEffect(() => {
-    fetch('https://opentdb.com/api.php?amount=5')
+    fetch('https://opentdb.com/api.php?amount=5&difficulty=easy&type=multiple')
       .then(response => response.json())
       .then(data => {
         const questionInfo = data.results.map((question) => ({
