@@ -9,7 +9,6 @@ export default function App() {
   const [gameStarted, setGameStarted] = useState(false)
   const [quizFinished, setQuizFinished] = useState(false)
   const [score, setScore] = useState(0)
-  // 
   const [questions, setQuestions] = useState([]);
 
   const styles = {
@@ -30,7 +29,6 @@ export default function App() {
     setGameStarted(false)
     setQuizFinished(false)
     setScore(0)
-    // 
     setQuestions([]);
   }
 

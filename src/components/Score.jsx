@@ -7,6 +7,7 @@ export default function Score({ questions, onRestartQuiz }) {
 
     return (
       <div key={question.id} className={`result ${isCorrect ? 'correct' : 'incorrect'}`}>
+        {/* Display the decoded question */}
         <h3>{decode(question.question)}</h3>
         <ul>
           {question.answers.map((choice) => (
@@ -15,6 +16,7 @@ export default function Score({ questions, onRestartQuiz }) {
                 htmlFor={choice} 
                 className={`radio-label ${question.selected === choice ? (isCorrect ? 'correct' : 'incorrect') : ''}`}
               >
+                {/* Disable the radio input and display the decoded answer choice */}
                 <input 
                     type="radio" 
                     name={question.id} 
@@ -27,6 +29,7 @@ export default function Score({ questions, onRestartQuiz }) {
             </li>
           ))}
         </ul>
+        {/* Display the correct answer if the selected answer is incorrect */}
         {!isCorrect && (
         <p className='correct-answer'>
           Correct: {decode(question.correct_answer)}
@@ -35,7 +38,8 @@ export default function Score({ questions, onRestartQuiz }) {
       </div>
     );
   }
-
+  
+  // Count the number of correct answers
   const score = questions.filter((question) => question.selected === question.correct_answer).length;
 
   return (
